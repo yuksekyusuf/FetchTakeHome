@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct FetchTakeHomeApp: App {
+    let dependencies = Dependencies(
+        recipeService: RecipeService(),
+        cacheService: CacheService())
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView(dependencies: dependencies)
         }
     }
 }
